@@ -50,5 +50,6 @@
         "yarn": "^1.22.19",
         "ziggy-js": "^1.5.0"
     },
-    "dependencies": {}
+    "dependencies": {},
+    "packageManager": "pnpm@9.11.0+sha1.4cd20e68438613738e8f2bc9aece61eaa6b3e649"
 }
