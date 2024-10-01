@@ -18,31 +18,37 @@ class DatabaseSeeder extends Seeder
                 'title' => 'The Go-Getter',
                 'description' => 'Answer all trivia questions',
                 'icon_path' => '/sprites/badges/go-getter.svg',
+                'completion_message' => 'Congrats!',
             ],
             [
                 'title' => 'The Oracle',
                 'description' => 'Answer all trivia questions correctly',
                 'icon_path' => '/sprites/badges/oracle.svg',
+                'completion_message' => 'Congrats!',
             ],
             [
                 'title' => 'The Artist',
                 'description' => 'Draw your first doodle!',
                 'icon_path' => '/sprites/badges/artist.svg',
+                'completion_message' => 'Congrats!',
             ],
             [
                 'title' => 'The Subscriber',
                 'description' => 'Subscribe to the newsletter',
                 'icon_path' => '/sprites/badges/subscriber.svg',
+                'completion_message' => 'Congrats!',
             ],
             [
                 'title' => 'The Recruiter',
                 'description' => 'Refer another user',
                 'icon_path' => '/sprites/badges/recruiter.svg',
+                'completion_message' => 'Congrats!',
             ],
             [
                 'title' => 'The Innovator',
                 'description' => 'Submit your first idea',
                 'icon_path' => '/sprites/badges/innovator.svg',
+                'completion_message' => 'Congrats!',
             ],
         ] as $badge) {
             Badge::create($badge);
@@ -52,6 +58,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'The Networker',
             'description' => 'Meet all the team',
             'icon_path' => '/sprites/badges/networker.svg',
+            'completion_message' => 'Congrats!',
         ]);
 
         $networker->tasks()->createMany([
