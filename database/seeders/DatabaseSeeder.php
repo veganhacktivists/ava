@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Badge;
 use App\Models\Idea;
 use App\Models\TriviaAnswer;
 use App\Models\TriviaQuestion;
@@ -12,6 +13,66 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
+        foreach ([
+            [
+                'title' => 'The Go-Getter',
+                'description' => 'Answer all trivia questions',
+                'icon_path' => '/sprites/badges/go-getter.svg',
+            ],
+            [
+                'title' => 'The Oracle',
+                'description' => 'Answer all trivia questions correctly',
+                'icon_path' => '/sprites/badges/oracle.svg',
+            ],
+            [
+                'title' => 'The Artist',
+                'description' => 'Draw your first doodle!',
+                'icon_path' => '/sprites/badges/artist.svg',
+            ],
+            [
+                'title' => 'The Subscriber',
+                'description' => 'Subscribe to the newsletter',
+                'icon_path' => '/sprites/badges/subscriber.svg',
+            ],
+            [
+                'title' => 'The Recruiter',
+                'description' => 'Refer another user',
+                'icon_path' => '/sprites/badges/recruiter.svg',
+            ],
+            [
+                'title' => 'The Innovator',
+                'description' => 'Submit your first idea',
+                'icon_path' => '/sprites/badges/innovator.svg',
+            ],
+        ] as $badge) {
+            Badge::create($badge);
+        }
+
+        $networker = Badge::create([
+            'title' => 'The Networker',
+            'description' => 'Meet all the team',
+            'icon_path' => '/sprites/badges/networker.svg',
+        ]);
+
+        $networker->tasks()->createMany([
+            [
+                'title' => 'Test',
+                'description' => 'Desc',
+                'icon_path' => '/sprites/badges/networker.svg',
+                'completion_message' => 'congrats! You did task 1!',
+                'permalink' => 'asd',
+                'num_votes' => 3,
+            ],
+            [
+                'title' => 'Test2',
+                'description' => 'Desc',
+                'icon_path' => '/sprites/badges/networker.svg',
+                'completion_message' => 'congrats! You did task 2!',
+                'permalink' => 'asd',
+                'num_votes' => 3,
+            ],
+        ]);
+
         TriviaQuestion::factory(10)
             ->has(
                 TriviaAnswer::factory()->state(['is_correct' => true]),
