@@ -32,7 +32,7 @@ export const BadgeDescriptionModal: React.FC<BadgeModalProps> = ({
         <div className="flex items-center gap-4">
           <img
             src={badge?.icon_path}
-            alt={badge?.title}
+            alt=""
             className={classNames(
               'w-1/5 max-w-[64px]',
               badge && !hasBadge(user, badge) && 'grayscale',
@@ -53,7 +53,7 @@ export const BadgeDescriptionModal: React.FC<BadgeModalProps> = ({
               >
                 <img
                   src={badgeTask.icon_path}
-                  alt={badgeTask.title}
+                  alt=""
                   className="w-1/5 max-w-[64px] [image-rendering:auto]"
                 />
                 <p className="flex-1">{badgeTask.title}</p>
