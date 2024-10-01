@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Actions\Newsletter\SubscribeUser;
-use App\Exceptions\Newsletter\NewsletterException;
 use App\Http\Controllers\Controller;
 use App\Models\Badge;
 use App\Models\User;
@@ -48,20 +46,12 @@ class RegisteredUserController extends Controller
                     'The Recruiter'
                 )->first();
 
-                if ($recruiterBadge && !$referrer->hasBadge($recruiterBadge)) {
+                if ($recruiterBadge && ! $referrer->hasBadge($recruiterBadge)) {
                     $referrer->badges()->attach($recruiterBadge->id);
                 }
 
                 $user->referrer_id = $referrer->id;
                 $user->save();
-            }
-        }
-
-        if ($request->input('subscribe')) {
-            try {
-                app(SubscribeUser::class)($user);
-            } catch (NewsletterException $e) {
-                // Ignore, already logged in SubscribeUser
             }
         }
 
