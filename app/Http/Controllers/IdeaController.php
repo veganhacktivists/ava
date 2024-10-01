@@ -48,7 +48,7 @@ class IdeaController extends Controller
         $user->castVote($idea);
 
         $innovatorBadge = Badge::where('title', 'The Innovator')->first();
-        if ($innovatorBadge && !$user->hasBadge($innovatorBadge)) {
+        if ($innovatorBadge && ! $user->hasBadge($innovatorBadge)) {
             $user->badges()->attach($innovatorBadge->id);
             session()->flash('badge', $innovatorBadge);
         }
@@ -78,12 +78,12 @@ class IdeaController extends Controller
 
     private function getIdeas(): Collection
     {
-        return Idea::orderByVotes()
+        return Idea::withCount('votes as all_votes_count')->orderBy('all_votes_count', 'DESC')
             ->withCount([
                 'votes' => function (Builder $query) {
                     return $query->where('votes.user_id', Auth::id());
                 },
             ])
-            ->get();
+            ->get()->makeHidden('all_votes_count');
     }
 }
