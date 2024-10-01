@@ -32,7 +32,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({
         </PrimaryButton>
 
         <ButtonLink
-          href="https://veganhacktivists.org/support"
+          // TODO: set href to org website
           className="is-pink w-full"
           target="_blank"
           isExternal

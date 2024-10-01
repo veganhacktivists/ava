@@ -88,7 +88,9 @@ const WelcomePage = () => {
               <div className="aspect-square bg-neutral-900 bg-opacity-90" />
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
                 <ApplicationLogo className="h-1/2" />
-                <h2 className="text-sm text-white">Vegan Hacktivists</h2>
+                <h2 className="text-sm text-white">
+                  {/* TODO: org name here */}
+                </h2>
               </div>
             </div>
           </div>

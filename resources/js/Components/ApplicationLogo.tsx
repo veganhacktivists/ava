@@ -11,7 +11,8 @@ export const ApplicationLogo: React.FC<ApplicationLogoProps> = ({
   return (
     <img
       src="/sprites/logo.svg"
-      alt="Vegan Hacktivists"
+      // TODO: set or name as the alt
+      alt=""
       className={classNames('inline-block', className)}
     />
   )
