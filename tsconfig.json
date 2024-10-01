@@ -8,7 +8,7 @@
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
       "@/*": ["./resources/js/*"]

@@ -1,5 +1,9 @@
-import route from 'ziggy-js'
+import routeFn from 'ziggy-js'
 import { createContext, useContext } from 'react'
+
+declare global {
+  const route: typeof routeFn
+}
 
 export const RouteContext = createContext<typeof route | null>(null)
 
