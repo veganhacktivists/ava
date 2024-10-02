@@ -16,6 +16,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       <div className="flex flex-col gap-4">
         <div className="contents text-sm text-white">
+          {/* TODO: update this text */}
           <p>
             Welcome! This app was built by Vegan Hacktivists to crowdsource
             innovative app ideas for the movement. You can submit ideas of your
